@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Shopping Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Mini Shop</h1>
+    <button id="cartBtn">🛒 Cart (<span id="cartCount">0</span>)</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Welcome to Mini Shop</h2>
+      <p>Simple, clean shopping website for a first-year project.</p>
+    </section>
+
+    <section class="products">
+      <h2>Products</h2>
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+  </main>
+
+  <div id="cartModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close" id="closeCart">✕</button>
+      <h2>Your Cart</h2>
+      <div id="cartItems"></div>
+      <p class="total">Total: ₹<span id="cartTotal">0</span></p>
+      <button id="checkoutBtn" class="primary">Place Order</button>
+    </div>
+  </div>
+
+  <div id="checkoutModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close" id="closeCheckout">✕</button>
+      <h2>Customer Details</h2>
+      <form id="checkoutForm">
+        <label>Full Name
+          <input type="text" id="name" required>
+        </label>
+        <label>Email
+          <input type="email" id="email" required>
+        </label>
+        <label>Phone Number
+          <input type="tel" id="phone" required>
+        </label>
+        <label>Address
+          <textarea id="address" rows="4" required></textarea>
+        </label>
+        <label>Payment Method
+          <select id="payment" required>
+            <option value="">Select</option>
+            <option>Cash on Delivery</option>
+            <option>UPI</option>
+            <option>Card</option>
+          </select>
+        </label>
+        <button class="primary" type="submit">Confirm Order</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="message" class="message"></div>
+  <script src="script.js"></script>
+</body>
+</html>
